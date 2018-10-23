@@ -49,12 +49,14 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{pgfgantt}			% gráficos Gantt
+\usepackage{nameref}			% referências pelo nome
+\usepackage{enumerate}			% listas com números
 % ---
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
-\usepackage{lipsum}				% para geração de dummy text
+%\usepackage{lipsum}				% para geração de dummy text
 % ---
 
 % ---
@@ -89,7 +91,7 @@
 % ---
 \titulo{Implantação de ligação ferroviária ao longo do curso do rio Tietê na Região Metropolitana de São Paulo: comparação com a infraestrutura existente ao longo do curso do rio Pinheiros}
 \autor{Caio César Carvalho Ortega}
-\local{São Bernardo do Campo-SP}
+\local{São Bernardo do Campo, SP}
 \data{2018}
 \tipotrabalho{Projeto para escrita de artigo (Graduação)}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
@@ -185,9 +187,9 @@
 % ---
 % inserir lista de ilustrações
 % ---
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
+%\pdfbookmark[0]{\listfigurename}{lof}
+%\listoffigures*
+%\cleardoublepage
 % ---
 
 % ---
@@ -202,8 +204,18 @@
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[CPTM] Companhia Paulista de Trens Metropolitanos
-  \item[RMSP] Região Metropolitana de São Paulo
+	\item[CET] Companhia de Engenharia de Tráfego
+	\item[CMSP] Companhia do Metropolitano de São Paulo
+	\item[CPTM] Companhia Paulista de Trens Metropolitanos
+	\item[Emplasa] Empresa Paulista de Planejamento Metropolitano Sociedade Anônima
+	\item[FAU-USP] Faculdade de Arquitetura e Urbanismo da Universidade de São Paulo
+	\item[Fepasa] Ferrovia Paulista Sociedade Anônima
+	\item[IBGE] Instituto Brasileiro de Geografia e Estatística
+	\item[PMSP] Prefeitura do Município de São Paulo
+	\item[RFFSA] Rede Ferroviária Federal Sociedade Anônima
+	\item[RMSP] Região Metropolitana de São Paulo
+	\item[SIG] Sistema de Informação Geográfica
+	\item[SMUL] Secretaria Municipal de Urbanismo e Licenciamento
 \end{siglas}
 % ---
 
@@ -235,10 +247,18 @@
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
-\chapter*[Introdução]{Introdução}
+\chapter*[Introdução]{Introdução} \label{intro}
 \addcontentsline{toc}{chapter}{Introdução}
 
-Este projeto de pesquisa parte da seguinte pergunta: ``considerando que há uma ligação ferroviária que acompanha o curso do rio Pinheiros, faria sentido implantar outra acompanhando o curso do rio Tietê em, pelo menos, parte da Região Metropolitana de São Paulo?'', alimentando a hipótese de que, sim, seria possível, considerando as viagens realizadas pela Marginal Tietê, a possibilidade de aproximar a população do rio e a configuração formada pela Marginal Tietê paralela (ainda que em parte) às linhas 3-Vermelha, 11-Coral, 12-Safira, 7-Rubi e 8-Diamante. São as variáveis da hipótese: densidade de estações por km$^{2}$, densidade de conexões entre linhas que se cruzam por km$^{2}$, ganho de capacidade/hora (comparação entre vias, uma via de tráfego misto transporta 10 mil passageiros/hora, cada via férrea pode transportar mais 60 mil passageiros/hora).
+% Instruções:
+% Introdução (no mínimo de 10 linhas). Explique o tema e qual é a sua pergunta. Apresente sua hipótese. Quem ler apenas a introdução deve concluir que seu artigo é interessante de ler, importante para a sociedade, gera ideias para outros pesquisadores, e é inovador. É preciso que a Introdução seja um texto completo, que faça sentido isolada do resto do projeto.
+
+% Notas:
+% sobre capacidade/hora, sustentar: (comparação entre vias, uma via de tráfego misto transporta 10 mil passageiros/hora, cada via férrea pode transportar mais 60 mil passageiros/hora)
+
+A assimetria entre a infraestrutura de transporte existente ao longo do curso dos rios Pinheiros e Tietê, no contexto da Região Metropolitana de São Paulo e seus processos de urbanização e de uso e ocupação do solo, que conforme \citeonline[p.43]{monteiro2010a}, contribuiu para inserir os dois cursos d'água ``no contexto urbano das últimas quatro décadas, sendo a construção das avenidas marginais, aliada às obras de retificação e canalização, a consolidação dessa atitude'', foi também coadjuvante para suscitar a pergunta que norteia este projeto de artigo: \textbf{``considerando que há uma ligação ferroviária que acompanha o curso do rio Pinheiros, faria sentido implantar outra acompanhando o curso do rio Tietê em, pelo menos, parte da Região Metropolitana de São Paulo?''}, tomando especialmente a caráter estratégico das várzeas \cite[p.63]{franco2005a} e o ``o papel das ferrovias ao conectar pontos distantes do espaço ocupado pela metrópole'' \cite[p.63]{franco2005a}.
+
+Trata-se de um objeto relevante para pesquisa, pois apesar da riqueza de trabalhos acerca dos rios em questão e do território por eles permeado, ainda não há uma comparação com vistas à problematização da ausência de uma ligação sobre trilhos no contexto do rio Tietê. Alimenta-se, portanto, a hipótese de que haveria a possibilidade de implantar esta segunda ligação ferroviária, para tanto, são considerados como fatores as viagens realizadas pela Marginal Tietê; a possibilidade de aproximar a população do rio e a configuração formada pela Marginal Tietê paralela (ainda que em parte) às linhas 3-Vermelha (esta da CMSP), 11-Coral, 12-Safira, 7-Rubi e 8-Diamante (estas últimas da CPTM); a densidade de estações por km$^{2}$; a densidade de conexões entre linhas que se cruzam por km$^{2}$; o ganho de capacidade/hora. Cabe ainda salientar que a implantação de uma nova linha do sistema metroferroviário não é aqui pensada como uma obra de engenharia, mas como uma decisão política e de planejamento territorial, daí a importância de resgatar o contexto histórico, realizar uma breve comparação dos processos de urbanização e refletir objetivamente acerca do possível impacto.
 
 % ----------------------------------------------------------
 % Elementos Textuais
@@ -246,52 +266,191 @@ Este projeto de pesquisa parte da seguinte pergunta: ``considerando que há uma 
 
 %===== Seção de Apresentação =============
 
-\chapter{Objetivos}
+\chapter{Objetivos} \label{objetivos}
 
-Os estudos aos quais tive acesso contribuem para compreender o território ligado ao rio Tietê e diferenciar a retificação, responsável por modificar o curso de ambos os rios e facilitar mudanças no tecido das vargens, em relação àquela realizada no Pinheiros, ligada aos negócios da Cia. City. Estes estudos, entretanto, não respondem minha pergunta. Não encontrei teses ou artigos que se debrucem especificamente sobre a possibilidade de construir uma ferrovia metropolitana ao longo do Tietê. Há de se considerar que o contexto que levou à construção do antigo ramal de Jurubatuba da finada Estrada de Ferro Sorocabana era distinto e São Paulo apresentava outra configuração populacional, além de pouco dinamismo ao longo do Pinheiros. A principal motivação da Sorocabana foi concorrer com a Santos-Jundiaí e oferecer outra ligação para acesso à Baixada Santista. Motivação esta que, hoje, nem mesmo dialoga com o atual uso da Linha 9-Esmeralda do Trem Metropolitano da CPTM.
+% Instruções:
+% Objetivos (no mínimo 20 linhas). Usando verbos propositivos, explique em mais detalhes o que você espera alcançar com este artigo e qual o legado que ele deixará para a sociedade. Talvez haja alguma redundância com uma parte da Introdução, mas aqui é importante focar no legado da sua pesquisa, apontando objetivos primários e secundários. Não use itens.
 
-Considerando as variáveis por mim colocadas, minha aposta inicial é que o artigo faria um levantamento histórico e em seguida partiria para uma breve análise do território e sua infraestrutura. Considerando o histórico e a infraestrutura. Minha aposta é que, sim, seria possível fazer, mas existem diferenças políticas e de atores consideráveis, para tanto, faz-se necessário identificar e registrar as principais diferenças na retificação dos dois rios; definir o volume de tráfego e de passageiros/hora ao longo das vias marginais, de forma a permitir comparações e; identificar o ganho de capacidade possível caso existisse uma linha metroferroviária similar à 9-Esmeralda acompanhando o rio Tietê, incluindo um mapeamento sobre a densidade de conexões e estações por km$^{2}$.
+Considerando os fatores mencionados na \nameref{intro}, faz-se necessário que o artigo pretendido faça um levantamento histórico e em seguida se debruce sobre uma breve análise do território e sua infraestrutura, necessário para contextualizar os perímetros urbanos que são objeto de estudo. Prevê-se que o território em questão não avançará para além dos limites da RMSP\footnote{Segundo \citeonline[p.35]{monteiro2010a}, ``situada no interior do planalto Atlântico, a região metropolitana está implantada na bacia sedimentar de São Paulo, por entre a Serra do Mar (ao sul) e da Cantareira (ao norte)''.}, o que se deve às várzeas dos rios, conforme aponta \citeonline[p.35]{monteiro2010a}: ``a várzea do rio Tietê estende-se em 25 km do bairro da Penha a Osasco, numa largura que varia entre 1,5 a 2,5km. Já a várzea do Pinheiros, de Santo Amaro até o Tietê, estende-se em 20 km,
+numa largura entre 1 a 1,5km''.
+
+Considerando ainda o histórico e a infraestrutura, o artigo partirá da premissa de que é possível implantar uma segunda ligação ferroviária, complementar àquela que existe ao longo do curso do rio Pinheiros, ademais, é também premissa de que existem  políticas e de atores consideráveis, assim sendo, faz-se necessário identificar e registrar uma série de elementos, tais como: as principais diferenças na retificação dos dois rios; o volume de tráfego e de passageiros/hora ao longo das vias marginais, de forma a permitir comparações e; identificar o ganho de capacidade possível caso existisse uma linha metroferroviária similar à 9-Esmeralda acompanhando o rio Tietê, incluindo um mapeamento sobre a densidade de conexões e estações por km$^{2}$.
 
 %===== Seção de Apresentação =============
 
 \chapter{Justificativa}
 
-\lipsum
+% Instruções: Justificativa (apresentação do problema, das hipóteses, e revisão da literatura. Consulte a aula de hoje. A Justificativa deve ter no mínimo 50 linhas). Escreva a justificativa a partir do seu plano de pesquisa, desenvolvendo brevemente cada item. Prove que você já domina o assunto em um nível básico, e que leu ao menos 3 artigos sobre o tema. Mencione aspectos históricos, problemas atuais relacionados ao tema, o que outros autores já escreveram sobre o tema e como sua pergunta ainda não foi suficientemente respondida
+
+Os estudos aos quais tive acesso contribuem para ampliar a compreensão do território ligado ao rio Tietê e diferenciar a retificação, responsável por modificar o curso de ambos os rios e facilitar mudanças no tecido das vargens, em relação àquela realizada no Pinheiros, ligada aos negócios da Cia. City \cite[p.53]{francca2000a}. Estes estudos, entretanto, não respondem minha pergunta. Não encontrei teses ou artigos que se debrucem especificamente sobre a possibilidade de construir uma ferrovia metropolitana ao longo do Tietê. Há de se considerar que o contexto que levou à construção do antigo ramal de Jurubatuba da finada Estrada de Ferro Sorocabana, inaugurado em 1957 \cite[p.140]{requena2016a} era distinto e São Paulo apresentava outra configuração populacional, além de pouco dinamismo ao longo do Pinheiros. A principal motivação da Sorocabana foi concorrer com a Santos-Jundiaí e oferecer outra ligação para acesso à Baixada Santista e o Porto de Santos, o que, segundo \citeonline[p.140]{requena2016a}, reduzia a viagem em aproximadamente 80 quilômetros para cargas triadas na Barra Funda. Esta motivação, atualmente, nem mesmo dialoga com o atual uso da Linha 9-Esmeralda do Trem Metropolitano da CPTM, ao que corroboram trechos dos trabalhos de (i) \citeonline[p.127]{monteiro2010a}: ``o sistema ferroviário, por sua vez, instalado nas várzeas dos dois rios nos primeiros anos de industrialização, é aproveitado posteriormente para o transporte metropolitano'' e; (ii) \citeonline[p.209]{franco2005a}: ``antes majoritariamente destinado ao transporte de cargas, a partir da privatização das ferrovias passou a ser definido como infra-estrutura de interesse prioritário para o transporte urbano de passageiros.'' 
+
+Apesar de \citeonline[p.160]{brocaneli2007a} destacar que as obras de canalização do rio Tietê tiveram caráter urbanístico predatório e pouco contribuíram para o enaltecimento dos recursos naturais como valores ambientais, prejudicando a identidade e a memória da paisagem ambiental, bem como o acesso ao rio pela população e, ainda que intuitivamente se possa pensar que o mesmo venha a se aplicar às obras de canalização do rio Pinheiros, a seguinte constatação de \citeonline[p.148--149]{monteiro2010a} foi suficientemente intrigante para que eu desse continuidade a este projeto:
+
+\begin{citacao}
+	``Curiosamente, portanto, ainda que se interponha entre o rio e a cidade como mais um elemento de obstáculo ao acesso direto aos rios, a via férrea da CPTM acaba por levar a população às margens dos rios duma outra maneira, ainda que não seja o Pinheiros o lugar de destino intencionado. As estações de trem, nesse sentido, compostas por um edifício de acesso na malha urbana, uma passarela sobre a via expressa e a plataforma, convertem-se em importantes elementos de acesso às mensagens contidas no sistema marginal''.
+\end{citacao}
+
+Ou seja, ainda que não seja um objetivo principal explorar uma relação paisagística que considere uma transformação das margens do rio Tietê a partir da implantação de uma nova infraestrutura ferroviário, considero que o artigo possa vir a contribuir para que outros trabalhos desenvolvam-na. Outra motivação está ligada a uma assimetria associada à noção de conveniência sem distinção de renda, melhor compreendida ao observar o que \citeonline[p.149]{requena2016a} salienta com relação à Linha 9-Esmeralda: ``sua conveniência reside no fato de proporcionar, principalmente ao cidadão de menor renda, meios eficazes de acessar as áreas mais equipadas da cidade para seu uso, independentemente de suas condições financeiras''. Trata-se de um atributo inexistente ao longo da Marginal Tietê, na qual o transporte individual motorizado é o principal protagonista como forma de acesso \footnote{Uma reflexão sobre o papel do automóvel em comparação com trens e bondes pode ser conferida em \cite[p.147--149]{franco2005a}.}.
+
+Outro aspecto intrigante é que, apesar do fracasso do ramal de Jurubatuba devido à pressão da matriz rodoviária, este tenha sobrevivido e dado origem à Linha 9-Esmeralda da CPTM: ``o ramal Jurubatuba permaneceu ocioso na sua função secundária de servir a indústria. Por sofrer a concorrência do modal rodoviário, que se intensificou simultaneamente a sua construção, todo o ramal foi perdendo paulatinamente sua importância'' \cite[p.141]{requena2016a}. Pouco mais de uma década depois de seu surgimento, o ramal de Jurubatuba passa então a ser o locus de ações que buscavam dinamizar seu uso:
+
+\begin{citacao}
+	``O plano da Fepasa de meados da década de 1970, chamado ``Dinamização da Linha Sul'', consistia em transformar o ramal Jurubatuba num corredor estruturador de alta capacidade de transporte de pessoas, e alimentado pelas linhas de ônibus desviadas das rotas concorrentes para convergirem às estações ferroviárias.'' \cite[p.143]{requena2016a}
+\end{citacao}
+
+Finalmente, como mencionado nos \nameref{objetivos}, existem uma série de diferenças que podem ser comparadas e evidenciadas com brevidade e considerando especificamente a implantação de uma nova linha metroferroviária. Uma delas diz respeito ao processo de canalização dos rios:
+
+\begin{citacao}
+	``O processo de canalização do Pinheiros é marcado por diferenças estruturais. Enquanto a dimensão física se expande, a escala temporal se contrai. A canalização é feita em uma única empreitada, de acordo com um projeto elaborado na totalidade pela equipe coordenada pelo engenheiro de origem norte-americana Asa White Billings.'' \cite[p.58]{franco2005a}
+\end{citacao}
 
 
 %===== Seção de Metodologia ==============
 
 \chapter{Metodologia}
 
-\lipsum
+% Instruções:
+% Você vai ler quais autores? Vai compará-los? Vai confrontá-los?
+% Você vai usar alguma base de dados ? (da ONU? da Prefeitura? do IBGE?)
+% Você vai conduzir uma pesquisa de campo?
+% Fará alguma pesquisa experimental? Como será o experimento? Quais equipamentos serão usados?
+% Você vai desenvolver um questionário para uma amostra do seu universo de estudo responder? Qual modelo de questionário será usado?
+% Você vai fazer entrevistas com autoridades no assunto?
+% Você vai participar de um grupo de estudos sobre o assunto e trocar ideias com seus pares?
+% Você pretende participar de alguma conferência sobre o tema da sua pesquisa durante o projeto?
+% Você vai usar algum método já conhecido para analisar os dados que você coletar em bases de dados? Você fará tabelas? Gráficos? Mostrará curvas que comprovem sua hipótese?
+
+A metodologia empregada é a realização de uma pesquisa exploratória, envolvendo revisão bibliográfica pelo menos das obras citadas até aqui e devidamente referenciadas, sendo uma delas parte dos trabalhos desenvolvidos pelo grupo Metrópole Fluvial da FAU-USP. Serão utilizados dados da Prefeitura do Município de São Paulo, especialmente da CET, além disso, prevê-se a utilização de dados do Governo do Estado de São Paulo, especialmente aqueles ligados à demanda e volume de passageiros da CMSP e da CPTM.
+
+Para a elaboração de representações cartográficas das áreas de estudo, estão previstos a utilização de \textit{shapefiles} do IBGE, da Emplasa e da SMUL da PMSP, a serem utilizados em conjunto com o \textit{software} de SIG QGIS.
 
 %===== Seção de Metodologia ==============
 
 \chapter{Cronograma}
 
-\index{elementos textuais}
-O cronograma tem por objetivo prever as ações distribuídas de acordo com o tempo previsto de pesquisa. O cronograma deve estar alinhado com os objetivos específicos e com a metodologia. Nos objetivos específicos tem-se “o que vou fazer”, na metodologia, “como vou fazer” e no cronograma, “quando vou fazer”.
+% Instruções:
+% Comprove para o parecerista (e para você mesmo) que é possível ler a bibliografia, levantar dados e escrever o artigo até dia 06/11 (etapa de peer-review) e ter a versão final para dia 06/12.
 
-A  \autoref{tabela_cronog} apresenta o cronograma de execução da pesquisa. 
+O cronograma tem por objetivo prever as ações distribuídas de acordo com o tempo previsto para a elaboração do artigo. A  \autoref{cronog} apresenta o cronograma de execução e as etapas podem ser conferidas a seguir:
 
-\begin{table}[!htb]
-\centering
-\caption{Cronograma de Atividades}
-\label{tabela_cronog}
-\begin{tabular}{@{}llll@{}}
-\toprule
-\textit{Atividades}                  & \textit{Mês}       & \textit{Ano}   \\ \midrule
-Revisão Sistemática                  & Julho              & 2016      \\
-Análise de Trabalhos Relacionados    & Agosto             & 2016      \\
-Construção da Arquitetura            & Setembro           & 2016      \\
-Implementação do Sistema             & Outubro            & 2016      \\
-Avalição e Testes                    & Fevereiro          & 2017      \\
-                                     &                    &           \\ \bottomrule
-\end{tabular}
-\end{table}
+%%
+%% A fairly complicated example from section 2.9 of the package
+%% documentation. This reproduces an example from Wikipedia:
+%% http://en.wikipedia.org/wiki/Gantt_chart
+%%
+%\definecolor{barblue}{RGB}{153,204,254}
+%\definecolor{groupblue}{RGB}{51,102,254}
+%\definecolor{linkred}{RGB}{165,0,33}
+%%\renewcommand\sfdefault{phv}
+%%\renewcommand\mddefault{mc}
+%%\renewcommand\bfdefault{bc}
+%\setganttlinklabel{s-s}{START-TO-START}
+%\setganttlinklabel{f-s}{FINISH-TO-START}
+%\setganttlinklabel{f-f}{FINISH-TO-FINISH}
+%
+%\begin{figure}[h!]
+%	\centering
+%	\caption{Cronograma de ações distribuídas}
+%	\label{cronog}
+%	\textsf{
+%\begin{ganttchart}[
+%	canvas/.append style={fill=none, draw=black!5, line width=.75pt},
+%	hgrid style/.style={draw=black!5, line width=.75pt},
+%	vgrid={*1{draw=black!5, line width=.75pt}},
+%	today=7,
+%	today rule/.style={
+%		draw=black!64,
+%		dash pattern=on 3.5pt off 4.5pt,
+%		line width=1.5pt
+%	},
+%	today label font=\small\bfseries,
+%	title/.style={draw=none, fill=none},
+%	title label font=\bfseries\footnotesize,
+%	title label node/.append style={below=7pt},
+%	include title in canvas=false,
+%	bar label font=\mdseries\small\color{black!70},
+%	bar label node/.append style={left=2cm},
+%	bar/.append style={draw=none, fill=black!63},
+%	bar incomplete/.append style={fill=barblue},
+%	bar progress label font=\mdseries\footnotesize\color{black!70},
+%	group incomplete/.append style={fill=groupblue},
+%	group left shift=0,
+%	group right shift=0,
+%	group height=.5,
+%	group peaks tip position=0,
+%	group label node/.append style={left=.6cm},
+%	group progress label font=\bfseries\small,
+%	link/.style={-latex, line width=1.5pt, linkred},
+%	link label font=\scriptsize\bfseries,
+%	link label node/.append style={below left=-2pt and 0pt}
+%	]{1}{13}
+%	\gantttitle[
+%	title label node/.append style={below left=7pt and -3pt}
+%	]{WEEKS:\quad1}{1}
+%	\gantttitlelist{2,...,13}{1} \\
+%	\ganttgroup[progress=57]{WBS 1 Summary Element 1}{1}{10} \\
+%	\ganttbar[
+%	progress=75,
+%	name=WBS1A
+%	]{\textbf{WBS 1.1} Activity A}{1}{8} \\
+%	\ganttbar[
+%	progress=67,
+%	name=WBS1B
+%	]{\textbf{WBS 1.2} Activity B}{1}{3} \\
+%	\ganttbar[
+%	progress=50,
+%	name=WBS1C
+%	]{\textbf{WBS 1.3} Activity C}{4}{10} \\
+%	\ganttbar[
+%	progress=0,
+%	name=WBS1D
+%	]{\textbf{WBS 1.4} Activity D}{4}{10} \\[grid]
+%	\ganttgroup[progress=0]{WBS 2 Summary Element 2}{4}{10} \\
+%	\ganttbar[progress=0]{\textbf{WBS 2.1} Activity E}{4}{5} \\
+%	\ganttbar[progress=0]{\textbf{WBS 2.2} Activity F}{6}{8} \\
+%	\ganttbar[progress=0]{\textbf{WBS 2.3} Activity G}{9}{10}
+%	\ganttlink[link type=s-s]{WBS1A}{WBS1B}
+%	\ganttlink[link type=f-s]{WBS1B}{WBS1C}
+%	\ganttlink[
+%	link type=f-f,
+%	link label node/.append style=left
+%	]{WBS1C}{WBS1D}
+%\end{ganttchart}
+%	}
+%	\legend{Elaboração própria}
+%\end{figure}
 
+\begin{enumerate}
+	\item Leituras dos autores já selecionados (literatura primária ou comentadores);
+	\item Levantamento de dados;
+	\item Análise dos dados;
+	\item Elaboração de produtos cartográficos;
+	\item Elaboração de parecer de projeto de um colega;
+	\item Entrega do parecer de projeto de um colega;
+	\item Entrega do resumo do artigo (\textit{abstract});
+	\item Participação no Colóquio BCH;
+	\item Entrega do Artigo na versão final.
+\end{enumerate}
 
-
+\begin{table}[h!]\begin{center}
+		\caption{Cronograma}\label{cronog}
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} c c c c c c c c c c c c}
+			\toprule
+			& Etapa & 22--27 & 28--03 & 04--10 & 11--17 & 18--24 & 25--01 & 02--06 & \\
+			\midrule
+			%        22-27 28-03 04-10 11-17 18-24 25-01 02-06
+			&   1   &  x  &  x  &  x  &  x  &     &     &     &\\
+			&   2   &     &     &  x  &  x  &  x  &     &     &\\
+			&   3   &     &     &  x  &  x  &  x  &  x  &     &\\
+			&   4   &     &     &     &     &  x  &  x  &     &\\
+			&   5   &     &  x  &     &     &     &     &     &\\
+			&   6   &     &  x  &     &     &     &     &     &\\
+			&   7   &     &  x  &     &     &     &     &     &\\
+			&   8   &     &     &     &     &  x  &  x  &  x  &\\
+			&   9   &     &     &     &     &     &     &  x  &\\
+			\bottomrule
+		\end{tabular*}
+	\end{center}\end{table}
 
 % ----------------------------------------------------------
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
@@ -316,7 +475,7 @@ Avalição e Testes                    & Fevereiro          & 2017      \\
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{abntex2-modelo-references}
+\bibliography{fontes}
 
 % ----------------------------------------------------------
 % Glossário
@@ -390,7 +549,7 @@ Avalição e Testes                    & Fevereiro          & 2017      \\
 
 \phantompart
 
-\printindex
+%\printindex
 
 
 \end{document}
