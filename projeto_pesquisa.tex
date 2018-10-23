@@ -1,3 +1,5 @@
+%% projeto_pesquisa.tex, baseado no modelo do projeto abnTeX2
+%%
 %% abtex2-modelo-projeto-pesquisa.tex, v-1 PFC 1 2016
 %% Copyright 2012-2015 by abnTeX2 group at http://www.abntex.net.br/ 
 %%
@@ -7,8 +9,8 @@
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
-% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
-% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com ABNT NBR 
+% 15287:2011 Informação e documentação - Projeto de pesquisa -
 % Apresentação 
 % ------------------------------------------------------------------------ 
 % ------------------------------------------------------------------------
@@ -46,6 +48,7 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
+\usepackage{pgfgantt}			% gráficos Gantt
 % ---
 
 % ---
@@ -84,19 +87,21 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Título da Pesquisa e/ou Trabalho}
-\autor{Aluno do Curso de Ciências da Computação}
-\local{Jataí-GO}
-\data{2016}
-\tipotrabalho{Projeto de Pesquisa (Graduação)}
+\titulo{Implantação de ligação ferroviária ao longo do curso do rio Tietê na Região Metropolitana de São Paulo: comparação com a infraestrutura existente ao longo do curso do rio Pinheiros}
+\autor{Caio César Carvalho Ortega}
+\local{São Bernardo do Campo-SP}
+\data{2018}
+\tipotrabalho{Projeto para escrita de artigo (Graduação)}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
-\preambulo{Projeto de Pesquisa apresentado ao curso de Bacharelado em Ciências da Computação, como requisito para obtenção do grau final na disciplina de Projeto Final de Curso 1. }
+\preambulo{Projeto para escrita de artigo apresentado ao curso de Bacharelado em Ciências e Humanidades, como requisito para obtenção do grau final na disciplina de Práticas em Ciências e Humanidades}
 
-\orientador {Prof. Dr. Orientador do Aluno}
+\orientador[Orientadora:]{Profa. Dra. Paula Priscila Braga}
 
-\instituicao{
-  Universidade Federal de Goiás - Regional Jataí}
+
+\renewcommand{\orientador}{Orientadora:}
+
+\instituicao{Universidade Federal do ABC}
 
 
 % ---
@@ -197,20 +202,20 @@
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
+  \item[CPTM] Companhia Paulista de Trens Metropolitanos
+  \item[RMSP] Região Metropolitana de São Paulo
 \end{siglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
+%\end{simbolos}
 % ---
 
 % ---
@@ -233,144 +238,32 @@
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
 
-Um Projeto de Pesquisa é o planejamento de todas as etapas da pesquisa que se pretende realizar. Um projeto de pesquisa bem elaborado desempenha várias funções, tais como: definir e planejar o caminho a ser seguido no trabalho de pesquisa; atender as exigências das instituições de ensino e de fomento, tendo em vista a discussão/exposição/aprovação de propostas de desenvolvimento científico; permitir aos orientadores discutirem todas as etapas com o orientando, avaliando possibilidades, perspectivas e eventuais desvios; condicionar a discussão e a avaliação do projeto elaborado mediante o exame da banca examinadora (em cursos de graduação, pós-graduação, mestrado e doutorado); serve de base para solicitar bolsas de estudos e/ou financiamentos para o desenvolvimento da pesquisa junto a órgãos públicos ou privados.  
-Este documento e seu código-fonte são exemplos de referência de uso da classe
-\textsf{abntex2} e do pacote \textsf{abntex2cite}. O documento 
-exemplifica a elaboração de projetos de pesquisa produzidos
-conforme a ABNT NBR 15287:2011 \emph{Informação e documentação - Projeto de
-pesquisa - Apresentação}. 
-
-A INTRODUÇÃO é apresentada em forma de um texto “corrido”, ou seja, de uma única redação em que deverão ser apresentados os elementos: tema (objeto de estudo, problema e área/sub-área); objetivos (geral e específicos) e justificativas.
-
-Contextualiza-se o tema segundo o Marco Teórico/Estado da Arte que sustentará o desenvolvimento da pesquisa. Há que se esclarecer os limites para o seu desenvolvimento, a JUSTIFICATIVA da investigação por meio de uma REVISÃO BIBLIOGRÁFICA, em que se faz referência a estudos e pesquisas já realizados sobre o assunto em questão. O TEMA da pesquisa define o objeto de estudo a ser tratado. Pode equivaler ou não ao título do projeto ou da pesquisa. Deve ter um significado preciso. Já o PROBLEMA deve ser ainda mais específico e detalhado que o objeto de estudo. O problema também deve ser pautado em um levantamento bibliográfico. O problema, formulado como pergunta, deve ser associado ao marco teórico da investigação a ser feita e as demandas institucionais e sociais. Além disso, deve ser completo, ou seja, conter as variáveis necessárias e esclarecedoras da investigação. 
-A revisão bibliográfica, para justificar a pesquisa, pode ser feita, optando-se por um dos seguintes argumentos:
-\begin{enumerate}
-\item o pesquisador demonstra a análise incompleta ou insuficiente acerca do objeto de estudo;
-\item por meio da literatura selecionada, o estudioso demonstra contradições entre os autores em relação ao problema enunciado;
-\item o estudioso deseja colocar em xeque as conclusões encontradas sobre o objeto de estudo;
-\item o pesquisador necessita retestar os resultados já obtidos em outras investigações.
-\item a área carece de inovações, adequações, melhorias ou contribuições acerca de uma tema.
-\item a área pode ser solução para melhoria ou resolução de problemas de outras áreas afins ou não.
-\end{enumerate}
-
-Os OBJETIVOS são as metas conceituais a serem alcançadas com a realização do trabalho, por meio de verbos no infinitivo, como: demonstrar, identificar, observar, analisar, comparar. A melhor forma de destacá-los é dividi-los em geral / específicos. O GERAL deve se referir ao produto que se deseja obter com a investigação. 
-
-Já OBJETIVOS ESPECÍFICOS (devem conter, no mínimo, três) possuem natureza operacional, isto é, referem-se a procedimentos que deverão ser cumpridos para que o objetivo geral seja atingido, confirmando ou não a hipótese enunciada.
-
-É importante lembrar ao definir os objetivos específicos que os mesmos devem estar coerentes com a metodologia do trabalho (passos necessários para atingir os objetivos) e com o cronograma (tempo/prazo de execução do trabalho).
-Para enriquecer a seção de Objetivos (geral e específicos) é salutar apresentar estratégias para atingir os objetivos e quantificar metas a serem alcançadas.
-	
-    A HIPÓTESE é a tentativa de explicação ou solução do problema enunciado, expressa na forma de sentença afirmativa. Deve também estar de acordo com o Estado da Arte/Marco Teórico definido. Trata-se de um ato criativo. Deve possuir clareza conceitual, referir-se a conceitos passíveis de verificação (empírica). A \autoref{metodo_cient} ilustra quais são as fases de uma pesquisa.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=0.70]{metodo.png}
-    \caption{Fases de uma pesquisa}
-    \label{metodo_cient}
-\end{figure}
-
-Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em \citeonline{abntex2classe}.
-
-
-
-Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-\cite{abntex2classe,abntex2cite,abntex2cite-alf}. Consulte \citeonline{abntex2modelo} para obter
-exemplos e informações adicionais de uso de \abnTeX\ e de \LaTeX.
-
-
-
-
-
+Este projeto de pesquisa parte da seguinte pergunta: ``considerando que há uma ligação ferroviária que acompanha o curso do rio Pinheiros, faria sentido implantar outra acompanhando o curso do rio Tietê em, pelo menos, parte da Região Metropolitana de São Paulo?'', alimentando a hipótese de que, sim, seria possível, considerando as viagens realizadas pela Marginal Tietê, a possibilidade de aproximar a população do rio e a configuração formada pela Marginal Tietê paralela (ainda que em parte) às linhas 3-Vermelha, 11-Coral, 12-Safira, 7-Rubi e 8-Diamante. São as variáveis da hipótese: densidade de estações por km$^{2}$, densidade de conexões entre linhas que se cruzam por km$^{2}$, ganho de capacidade/hora (comparação entre vias, uma via de tráfego misto transporta 10 mil passageiros/hora, cada via férrea pode transportar mais 60 mil passageiros/hora).
 
 % ----------------------------------------------------------
 % Elementos Textuais
 % ----------------------------------------------------------
-\chapter{Referencial Teórico}
 
-\index{elementos textuais} O Referencial Teórico é um seção dos elementos textuais. A norma ABNT NBR 15287:2011, p. 5, apresenta a
-seguinte orientação quanto aos elementos textuais:
+%===== Seção de Apresentação =============
 
-\begin{citacao}
-O texto deve ser constituído de uma parte introdutória, na qual devem ser
-expostos o tema do projeto, o problema a ser abordado, a(s) hipótese(s),
-quando couber(em), bem como o(s) objetivo(s) a ser(em) atingido(s) e a(s)
-justificativa(s). É necessário que sejam indicados o referencial teórico que
-o embasa, a metodologia a ser utilizada, assim como os recursos e o cronograma
-necessários à sua consecução.\citeonline{abntex2classe}
-\end{citacao}
+\chapter{Objetivos}
 
-Deve-se apresentar a fundamentação teórica que orientará o estudo. Recomenda-se situar a grande área, subárea e objeto de estudo. Se for necessário pode ser feito um resgate histórico para demonstrar a evolução da área. Faz-se necessário relatar o momento vivido pela área (Marco Teórico - Estado da Arte) geralmente intitulado de Trabalhos Relacionados.
+Os estudos aos quais tive acesso contribuem para compreender o território ligado ao rio Tietê e diferenciar a retificação, responsável por modificar o curso de ambos os rios e facilitar mudanças no tecido das vargens, em relação àquela realizada no Pinheiros, ligada aos negócios da Cia. City. Estes estudos, entretanto, não respondem minha pergunta. Não encontrei teses ou artigos que se debrucem especificamente sobre a possibilidade de construir uma ferrovia metropolitana ao longo do Tietê. Há de se considerar que o contexto que levou à construção do antigo ramal de Jurubatuba da finada Estrada de Ferro Sorocabana era distinto e São Paulo apresentava outra configuração populacional, além de pouco dinamismo ao longo do Pinheiros. A principal motivação da Sorocabana foi concorrer com a Santos-Jundiaí e oferecer outra ligação para acesso à Baixada Santista. Motivação esta que, hoje, nem mesmo dialoga com o atual uso da Linha 9-Esmeralda do Trem Metropolitano da CPTM.
 
-O Referencial Teórico é considerado como um elemento de controle de toda a pesquisa, desde a problematização inicial. O pesquisador irá interpretar seu objeto de estudo de acordo com a concepção teórica de uma ou toda a obra de um autor ou de um objeto ou produto ou de um conjunto de autores (esta condução varia de acordo com cada área de conhecimento). Todas as etapas do projeto são definidas conforme esta escolha. Apresenta-se de modo aprofundado, respondendo quais os princípios, categorias, conceitos ou teorias fundamentam a pesquisa. Deve estar de acordo com o tema formulado e o raciocínio desenvolvido nas fases anteriores. 
+Considerando as variáveis por mim colocadas, minha aposta inicial é que o artigo faria um levantamento histórico e em seguida partiria para uma breve análise do território e sua infraestrutura. Considerando o histórico e a infraestrutura. Minha aposta é que, sim, seria possível fazer, mas existem diferenças políticas e de atores consideráveis, para tanto, faz-se necessário identificar e registrar as principais diferenças na retificação dos dois rios; definir o volume de tráfego e de passageiros/hora ao longo das vias marginais, de forma a permitir comparações e; identificar o ganho de capacidade possível caso existisse uma linha metroferroviária similar à 9-Esmeralda acompanhando o rio Tietê, incluindo um mapeamento sobre a densidade de conexões e estações por km$^{2}$.
+
+%===== Seção de Apresentação =============
+
+\chapter{Justificativa}
+
+\lipsum
 
 
 %===== Seção de Metodologia ==============
 
 \chapter{Metodologia}
 
-\index{elementos textuais} A metodologia em um Projeto de Pesquisa preocupa-se muito mais com a classificação da pesquisa do que propriamente com a condução e execução do trabalho. Porém, o ideal é apresentar o detalhamento metodológico da pesquisa incluindo aspectos técnicos de execução específicos da área. Desta forma, o leitor ou avaliador poderá ter clareza do que será feito e como será feito. Lembrando que a execução metodológica deve estar alinhada com os objetivos específicos descritos na Introdução. 
-
-\begin{enumerate}
-\item
-Tipo de Pesquisa: Pode-se fazer pesquisa bibliográfica, documental, experimental, estudo de caso e outros tipos. Na área tecnológica, a maioria dos trabalhos é classificada como experimental (quando há um protótipo desenvolvido) e estudo de caso (se situação problemática é relacionada à uma empresa).
-\item
-	Universo, População e Amostragem:
-Deve-se identificar a população da qual você está retirando a sua amostra. Por exemplo, se sua pesquisa envolve os alunos do curso de Sistemas de Informação, sua população é o número total destes alunos, por exemplo 250 alunos. Se você decide então fazer uma amostragem, digamos de 10\%, então sua amostra para fins de sua pesquisa será de 25 alunos.
-\item
-	Coleta de Dados:
-Deve-se indicar como irá operacionalizar a coleta os dados (questionários, check-lists, entrevistas, etc).
-\item
-	Análise e Interpretação dos Resultados:
-Descreve-se neste item como será a análise dos resultados da pesquisa (se a pesquisa for qualitativa, as respostas podem ser interpretadas global ou individualmente, se a pesquisa for  quantitativa, você provavelmente irá utilizar a estatística descritiva ( média, mediana, moda, desvio padrão, tendência central) ou estatística inferencial (regressão linear bivariada, multivariada, etc).
-\item
-Os gêneros de pesquisa:
-Em outra forma descritiva, a pesquisa também pode ser detalhada em termos de métodos obedecendo a classificação de natureza, objetivos, procedimentos, objeto e abordagem:
-\begin{enumerate}
-\item	Quanto à natureza
-\begin{itemize}
-\item Teórica - dita como conceitual, procura rever teorias ou formular novas idéias, parâmetros teórico-doutrinários, conceitos.
-Metodológica - destina-se a redimensionar novos procedimentos de investigação, modos inovadores de construir ciência, transformação de metodologias tradicionais, introdução de novas técnicas de se conceber o objeto de estudo.
-\item Empírica - dedica-se a mensurar a realidade; considera fatores sociais, políticos e econômicos na análise, em outras palavras, parte de constatações empíricas ou da realidade social para solucionar o problema da pesquisa; além disso, formula observações do real e propõe transformações do mesmo enquanto objeto de investigação.
-\item Prática - embora semelhante à empírica, difere-se desta por se voltar a intervenções concretas no ambiente político, jurídico, ou sócio-cultural; transformações durante o trajeto da investigação ou análises que proponham novos rumos para a realidade social são os objetivos desse gênero.
-\end{itemize}
-\item
-	Quanto aos objetivos
-\begin{itemize}
-\item Pesquisa exploratória
-- Proporcionar maior familiaridade com o problema;
-Levantamento bibliográfico ou entrevistas;
-Pesquisa bibliográfica ou estudo de caso.
-\item Pesquisa descritiva
-- Fatos são observados, registrados, analisados, classificados e interpretados, sem interferência do pesquisador.
-- Uso de técnicas padronizadas de coleta de dados (questionário e observação sistemática).
-\item Pesquisa explicativa
-- Identifica fatores determinantes para a ocorrência dos fenômenos.
-- Ciências naturais – método experimental; ciências sociais – método observacional.
-\end{itemize}
-\item  Quanto aos procedimentos
-\begin{itemize}
-\item Pesquisa de campo – observação e coleta de dados diretamente no local da ocorrência dos fatos.
-\item Pesquisa de fonte documental – pesquisa bibliográfica e documental.
-\end{itemize}
-
-\item
-	Quanto ao objeto
-\begin{itemize}
-\item Pesquisa bibliográfica/documental – elaborada a partir de material já publicado (livros de quaisquer espécies, artigos de periódicos).
-Pesquisa de laboratório – pesquisador procura refazer as condições de um fenômeno a ser estudado, para observá-lo sob controle.
-\item Pesquisa de campo – pesquisador constrói um modelo da realidade, definindo formas de observá-la, formas de acesso a esse campo, os participantes e o campo da pesquisa.
-\end{itemize}
-
-\item
-	Quanto à forma de abordagem
-\begin{itemize}
-\item Pesquisa quantitativa – traduz em números as opiniões e informações para serem classificadas e analisadas. Utilizam-se técnicas estatísticas.
-
-\item Pesquisa qualitativa – é descritiva. As informações obtidas não podem ser quantificáveis. Os dados obtidos são analisados indutivamente. A interpretação dos fenômenos e a atribuição de significados são básicas no processo de pesquisa qualitativa. 
-\end{itemize}
-\end{enumerate}
-\end{enumerate}
+\lipsum
 
 %===== Seção de Metodologia ==============
 
